@@ -1,7 +1,34 @@
 package ru.hackathon.dao;
 
-public class DataBaseFile {
-    private static String urlDB = "jdbc:mysql://mysql.bakhuss.myjino.ru:3306/bakhuss_hakaton?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/Moscow";
+public class DataBaseFile implements DataBase{
 
-    public static String getUrlDB() {return urlDB;}
+    private String urlDB;
+    private String user;
+    private String password;
+
+    public DataBaseFile(String urlDB, String user, String password) {
+        this.urlDB = urlDB;
+        this.user = user;
+        this.password = password;
+    }
+
+
+
+
+    @Override
+    public String getUrlDB() {
+        return urlDB;
+    }
+
+    @Override
+    public String getUser() {
+        return user;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+
 }

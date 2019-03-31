@@ -1,10 +1,7 @@
 package ru.hackathon.dao;
 
-import com.mysql.jdbc.Driver;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -12,10 +9,9 @@ public class SQLHandler {
 
     private Connection connection;
     private Statement stmt;
-    private PreparedStatement pstmt;
 
-    public void connect() throws SQLException {
-        connection = DriverManager.getConnection(DataBaseFile.getUrlDB(), "046835859_hakat", "hakat");
+    public void connect(DataBase dataBase) throws SQLException {
+        connection = DriverManager.getConnection(dataBase.getUrlDB(), dataBase.getUser(), dataBase.getPassword());
         stmt = connection.createStatement();
     }
 
