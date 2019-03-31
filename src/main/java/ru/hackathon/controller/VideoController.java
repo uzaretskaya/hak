@@ -13,7 +13,6 @@ import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 import ru.hackathon.VideoPlayer;
 import ru.hackathon.dao.FromMySql;
-import ru.hackathon.model.Camera;
 import ru.hackathon.model.Event;
 
 import java.net.URL;
@@ -29,7 +28,7 @@ public class VideoController implements Initializable {
 
     private String videoPath;
     private Long id_video;
-    private Integer current_row = 0;
+    private Integer current_row = -1;
 
     private ObservableList<Event> eventsData = FXCollections.observableArrayList();
 
@@ -64,15 +63,31 @@ public class VideoController implements Initializable {
     }
 
     @FXML
-    private void methodNext() {
-        if (mediaPlayer == null || eventsData.size() <= current_row) {
+    private void methodPrevious() {
+        if (mediaPlayer == null) {
             return;
         }
-        Long time_open = eventsData.get(current_row).getTime_open();
+        if (current_row == 0){
+            Duration duration = new Duration(0.0);
+            mediaPlayer.seek(duration);
+            current_row = -1;
+        } else {
+            Long time_open = eventsData.get(--current_row).getTime_open();
+            double currentTime = mediaPlayer.getCurrentTime().toMillis();
+            Duration duration = new Duration(currentTime - time_open * 1000.0);
+            mediaPlayer.seek(duration);
+        }
+    }
+
+    @FXML
+    private void methodNext() {
+        if (mediaPlayer == null || eventsData.size() <= (current_row + 1)) {
+            return;
+        }
+        Long time_open = eventsData.get(++current_row).getTime_open();
         double currentTime = mediaPlayer.getCurrentTime().toMillis();
         Duration duration = new Duration(currentTime + time_open * 1000.0);
         mediaPlayer.seek(duration);
-        current_row++;
     }
 
     @FXML

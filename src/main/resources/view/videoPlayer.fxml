@@ -19,6 +19,7 @@
                     <Button fx:id="btPlay" onAction="#methodPlay" text="play" />
                     <Button fx:id="btPause" onAction="#methodPause" text="pause" />
                     <Button fx:id="btStop" onAction="#methodStop" text="stop" />
+                    <Button fx:id="btPrevious" onAction="#methodPrevious" text="previous" />
                     <Button fx:id="btNext" onAction="#methodNext" text="next" />
                 </buttons>
             </ButtonBar>
