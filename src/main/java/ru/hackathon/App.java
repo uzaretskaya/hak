@@ -8,11 +8,8 @@ import ru.hackathon.controller.MainViewController;
 
 public class App extends Application {
 
-    private Stage primaryStage;
-
     @Override
     public void start(Stage primaryStage) throws Exception {
-        this.primaryStage = primaryStage;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(App.class.getResource("/view/mainView.fxml"));
         primaryStage.setTitle("Settings");
