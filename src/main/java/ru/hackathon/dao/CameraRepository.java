@@ -14,6 +14,6 @@ public interface CameraRepository {
 
     void removeCamera(Camera camera);
 
-    List<Event> getEvents(Long id_video);
+    List<Event> getEvents(Long idVideo);
 
 }

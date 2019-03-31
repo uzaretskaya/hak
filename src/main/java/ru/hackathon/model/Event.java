@@ -2,22 +2,22 @@ package ru.hackathon.model;
 
 public class Event {
 
-    private Long time_open;
-    private Long time_close;
+    private Long timeOpen;
+    private Long timeClose;
 
-    public Long getTime_open() {
-        return time_open;
+    public Long getTimeOpen() {
+        return timeOpen;
     }
 
-    public void setTime_open(Long time_open) {
-        this.time_open = time_open;
+    public void setTimeOpen(Long timeOpen) {
+        this.timeOpen = timeOpen;
     }
 
-    public Long getTime_close() {
-        return time_close;
+    public Long getTimeClose() {
+        return timeClose;
     }
 
-    public void setTime_close(Long time_close) {
-        this.time_close = time_close;
+    public void setTimeClose(Long timeClose) {
+        this.timeClose = timeClose;
     }
 }

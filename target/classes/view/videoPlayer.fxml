@@ -29,8 +29,8 @@
         </HBox>
         <TableView fx:id="tableEvents" maxHeight="250" AnchorPane.bottomAnchor="0.0">
             <columns>
-                <TableColumn fx:id="time_openColumn" prefWidth="100.0" text="time_open" />
-                <TableColumn fx:id="time_closeColumn" prefWidth="100.0" text="time_close" />
+                <TableColumn fx:id="timeOpenColumn" prefWidth="100.0" text="time_open" />
+                <TableColumn fx:id="timeCloseColumn" prefWidth="100.0" text="time_close" />
             </columns>
             <VBox.margin>
                 <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

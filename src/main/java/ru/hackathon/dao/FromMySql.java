@@ -57,17 +57,17 @@ public class FromMySql implements CameraRepository {
     }
 
     @Override
-    public List<Event> getEvents(Long id_video) {
+    public List<Event> getEvents(Long idVideo) {
         SQLHandler sqlHandler = new SQLHandler();
-        String sql = "select * from timelines where camera_times_id = " + id_video;
+        String sql = "select * from timelines where camera_times_id = " + idVideo;
         List<Event> events = new ArrayList();
         try {
             sqlHandler.connect(dataBase);
             ResultSet rs = sqlHandler.getStmt().executeQuery(sql);
             while (rs.next()) {
                 Event event = new Event();
-                event.setTime_open(rs.getLong("time_open"));
-                event.setTime_close(rs.getLong("time_close"));
+                event.setTimeOpen(rs.getLong("time_open"));
+                event.setTimeClose(rs.getLong("time_close"));
                 events.add(event);
             }
         } catch (SQLException e) {

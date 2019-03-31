@@ -27,8 +27,8 @@ public class VideoController implements Initializable {
     private MediaPlayer mediaPlayer;
 
     private String videoPath;
-    private Long id_video;
-    private Integer current_row = -1;
+    private Long idVideo;
+    private Integer currentRow = -1;
 
     private ObservableList<Event> eventsData = FXCollections.observableArrayList();
 
@@ -36,14 +36,14 @@ public class VideoController implements Initializable {
     private TableView<Event> tableEvents;
 
     @FXML
-    private TableColumn<Event, Long> time_openColumn;
+    private TableColumn<Event, Long> timeOpenColumn;
 
     @FXML
-    private TableColumn<Event, Long> time_closeColumn;
+    private TableColumn<Event, Long> timeCloseColumn;
 
     public void setApp(VideoPlayer app) {
         this.videoPath = app.getVideoPath();
-        this.id_video = app.getId_video();
+        this.idVideo = app.getIdVideo();
     }
 
     @FXML
@@ -67,12 +67,12 @@ public class VideoController implements Initializable {
         if (mediaPlayer == null) {
             return;
         }
-        if (current_row == 0){
+        if (currentRow <= 0){
             Duration duration = new Duration(0.0);
             mediaPlayer.seek(duration);
-            current_row = -1;
+            currentRow = -1;
         } else {
-            Long time_open = eventsData.get(--current_row).getTime_open();
+            Long time_open = eventsData.get(--currentRow).getTimeOpen();
             double currentTime = mediaPlayer.getCurrentTime().toMillis();
             Duration duration = new Duration(currentTime - time_open * 1000.0);
             mediaPlayer.seek(duration);
@@ -81,12 +81,12 @@ public class VideoController implements Initializable {
 
     @FXML
     private void methodNext() {
-        if (mediaPlayer == null || eventsData.size() <= (current_row + 1)) {
+        if (mediaPlayer == null || eventsData.size() <= (currentRow + 1)) {
             return;
         }
-        Long time_open = eventsData.get(++current_row).getTime_open();
+        Long timeOpen = eventsData.get(++currentRow).getTimeOpen();
         double currentTime = mediaPlayer.getCurrentTime().toMillis();
-        Duration duration = new Duration(currentTime + time_open * 1000.0);
+        Duration duration = new Duration(currentTime + timeOpen * 1000.0);
         mediaPlayer.seek(duration);
     }
 
@@ -107,10 +107,10 @@ public class VideoController implements Initializable {
             video.setMediaPlayer(mediaPlayer);
         }
         FromMySql sqlBase = new FromMySql();
-        List<Event> events = sqlBase.getEvents(id_video);
+        List<Event> events = sqlBase.getEvents(idVideo);
         eventsData.addAll(events);
-        time_openColumn.setCellValueFactory(new PropertyValueFactory<Event, Long>("time_open"));
-        time_closeColumn.setCellValueFactory(new PropertyValueFactory<Event, Long>("time_close"));
+        timeOpenColumn.setCellValueFactory(new PropertyValueFactory<Event, Long>("timeOpen"));
+        timeCloseColumn.setCellValueFactory(new PropertyValueFactory<Event, Long>("timeClose"));
         tableEvents.setItems(eventsData);
     }
 

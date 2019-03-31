@@ -8,11 +8,11 @@ import ru.hackathon.controller.VideoController;
 public class VideoPlayer  {
 
     private String videoPath;
-    private Long id_video;
+    private Long idVideo;
 
     public void start(String videoPath, Long id) throws Exception {
         this.videoPath = videoPath;
-        this.id_video = id;
+        this.idVideo = id;
         Stage primaryStage = new Stage();
         VideoController controller = new VideoController();
         controller.setApp(this);
@@ -29,8 +29,8 @@ public class VideoPlayer  {
         return videoPath;
     }
 
-    public Long getId_video() {
-        return id_video;
+    public Long getIdVideo() {
+        return idVideo;
     }
 
 }
