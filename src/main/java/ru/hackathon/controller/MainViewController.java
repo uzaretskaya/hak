@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import ru.hackathon.App;
 import ru.hackathon.VideoPlayer;
 import ru.hackathon.dao.FromMySql;
 import ru.hackathon.model.Camera;
@@ -23,16 +22,13 @@ public class MainViewController implements Initializable {
     private TableView<Camera> tableCameras;
 
     @FXML
+    private TableColumn<Camera, Long> IDColumn;
+
+    @FXML
     private TableColumn<Camera, Long> cameraIDColumn;
 
     @FXML
     private TableColumn<Camera, String> videoPathColumn;
-
-    private App app;
-
-    public void setApp(App app) {
-        this.app = app;
-    }
 
     @FXML
     private void methodChoise() {
@@ -44,10 +40,11 @@ public class MainViewController implements Initializable {
         }
         if (row != null){
             String videoPath = camerasData.get(row).getPathVideo();
+            Long id = camerasData.get(row).getId();
             if (videoPath != ""){
                 VideoPlayer player = new VideoPlayer();
                 try {
-                    player.start(videoPath);
+                    player.start(videoPath, id);
                 } catch (Exception e){
                     e.printStackTrace();
                 }
@@ -60,6 +57,7 @@ public class MainViewController implements Initializable {
         FromMySql sqlBase = new FromMySql();
         List<Camera> cameras = sqlBase.getCameras();
         camerasData.addAll(cameras);
+        IDColumn.setCellValueFactory(new PropertyValueFactory<Camera, Long>("Id"));
         cameraIDColumn.setCellValueFactory(new PropertyValueFactory<Camera, Long>("cameraId"));
         videoPathColumn.setCellValueFactory(new PropertyValueFactory<Camera, String>("pathVideo"));
         tableCameras.setItems(camerasData);

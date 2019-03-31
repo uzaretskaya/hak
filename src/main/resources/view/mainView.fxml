@@ -17,6 +17,7 @@
         </Button>
         <TableView fx:id="tableCameras" maxHeight="250" AnchorPane.bottomAnchor="0.0">
             <columns>
+                <TableColumn fx:id="IDColumn" prefWidth="50.0" text="id"/>
                 <TableColumn fx:id="cameraIDColumn" prefWidth="100.0" text="Camera_id"/>
                 <TableColumn fx:id="videoPathColumn" prefWidth="550.0" text="Video path"/>
             </columns>

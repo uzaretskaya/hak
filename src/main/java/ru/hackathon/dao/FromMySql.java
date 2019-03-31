@@ -1,6 +1,8 @@
 package ru.hackathon.dao;
 
 import ru.hackathon.model.Camera;
+import ru.hackathon.model.Event;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class FromMySql implements CameraRepository {
             ResultSet rs = sqlHandler.getStmt().executeQuery(sql);
             while (rs.next()) {
                 Camera camera = new Camera();
+                camera.setId(rs.getLong("Id"));
                 camera.setCameraId(rs.getLong("camera_id"));
                 camera.setPathVideo(rs.getString("path_video"));
                 cameras.add(camera);
@@ -51,5 +54,27 @@ public class FromMySql implements CameraRepository {
     @Override
     public void removeCamera(Camera camera) {
 
+    }
+
+    @Override
+    public List<Event> getEvents(Long id_video) {
+        SQLHandler sqlHandler = new SQLHandler();
+        String sql = "select * from timelines";
+        List<Event> events = new ArrayList();
+        try {
+            sqlHandler.connect(dataBase);
+            ResultSet rs = sqlHandler.getStmt().executeQuery(sql);
+            while (rs.next()) {
+                Event event = new Event();
+                event.setTime_open(rs.getLong("time_open"));
+                event.setTime_close(rs.getLong("time_close"));
+                events.add(event);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            sqlHandler.disconnect();
+        }
+        return events;
     }
 }

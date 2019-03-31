@@ -18,6 +18,9 @@ public class Camera {
     @Id
     @Setter(AccessLevel.NONE)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
+
+    @Column(name = "camera_id")
     private Long cameraId;
 
     @Column(name = "date_from")
@@ -28,7 +31,6 @@ public class Camera {
 
     @Column(name = "path_video")
     private String pathVideo;
-
 
     /**
      * {@inheritDoc}
@@ -69,5 +71,13 @@ public class Camera {
 
     public void setPathVideo(String pathVideo) {
         this.pathVideo = pathVideo;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 }

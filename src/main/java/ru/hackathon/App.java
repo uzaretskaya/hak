@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.hackathon.controller.MainViewController;
 
 public class App extends Application {
 
@@ -15,8 +14,6 @@ public class App extends Application {
         primaryStage.setTitle("Settings");
         primaryStage.setScene(new Scene(loader.load(), 658, 296));
         primaryStage.show();
-        MainViewController controller = loader.getController();
-        controller.setApp(this);
     }
 
 }
