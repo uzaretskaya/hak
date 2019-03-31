@@ -16,11 +16,11 @@
         <HBox>
             <ButtonBar nodeOrientation="LEFT_TO_RIGHT">
                 <buttons>
-                    <Button fx:id="btPlay" onAction="#methodPlay" text="play" />
-                    <Button fx:id="btPause" onAction="#methodPause" text="pause" />
-                    <Button fx:id="btStop" onAction="#methodStop" text="stop" />
-                    <Button fx:id="btPrevious" onAction="#methodPrevious" text="previous" />
-                    <Button fx:id="btNext" onAction="#methodNext" text="next" />
+                    <Button fx:id="btPlay" onAction="#methodPlay" text="" />
+                    <Button fx:id="btPause" onAction="#methodPause" text="" />
+                    <Button fx:id="btStop" onAction="#methodStop" text="" />
+                    <Button fx:id="btPrevious" onAction="#methodPrevious" text="" />
+                    <Button fx:id="btNext" onAction="#methodNext" text="" />
                     <Button fx:id="btChoise" onAction="#methodСhoice" text="choice" />
                 </buttons>
             </ButtonBar>
@@ -32,6 +32,7 @@
             <columns>
                 <TableColumn fx:id="timeOpenColumn" prefWidth="100.0" text="time_open" />
                 <TableColumn fx:id="timeCloseColumn" prefWidth="100.0" text="time_close" />
+                <TableColumn fx:id="descriptionColumn" prefWidth="300.0" text="description" />
             </columns>
             <VBox.margin>
                 <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />

@@ -68,6 +68,7 @@ public class FromMySql implements CameraRepository {
                 Event event = new Event();
                 event.setTimeOpen(rs.getLong("time_open"));
                 event.setTimeClose(rs.getLong("time_close"));
+                event.setDescription(rs.getString("description"));
                 events.add(event);
             }
         } catch (SQLException e) {
