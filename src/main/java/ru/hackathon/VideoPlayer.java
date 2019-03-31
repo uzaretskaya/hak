@@ -2,10 +2,11 @@ package ru.hackathon;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import ru.hackathon.controller.VideoController;
 
-public class VideoPlayer  {
+public class VideoPlayer {
 
     private String videoPath;
     private Long idVideo;
@@ -22,6 +23,8 @@ public class VideoPlayer  {
         Scene scene = new Scene(loader.load(), 700, 690);
         primaryStage.setTitle("VideoPlayer");
         primaryStage.setScene(scene);
+        Image imageVideo = new Image(getClass().getResourceAsStream("/Video.png"));
+        primaryStage.getIcons().add(imageVideo);
         primaryStage.show();
     }
 

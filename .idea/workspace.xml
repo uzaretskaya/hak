@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/controller/VideoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1488">
-              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+            <state relative-caret-position="246">
+              <caret line="167" column="70" selection-start-line="167" selection-start-column="44" selection-end-line="167" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/view/videoPlayer.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+            <state relative-caret-position="153">
+              <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -67,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/dao/FromMySql.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1190">
-              <caret line="70" column="50" lean-forward="true" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+              <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="238">
+              <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,14 +163,14 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/dao/SQLHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/mainView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/model/Camera.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/controller/MainViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/VideoPlayer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/dao/CameraRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/model/Event.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/dao/FromMySql.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/view/videoPlayer.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/controller/VideoController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/view/videoPlayer.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/hackathon/App.java" />
       </list>
     </option>
   </component>
@@ -278,7 +278,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554038923042" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554039499110" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hackathon_2019" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -338,12 +338,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554017329495</updated>
-      <workItem from="1554017331825" duration="20069000" />
+      <workItem from="1554017331825" duration="20626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20069000" />
+    <option name="totallyTimeSpent" value="20626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -509,16 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/VideoPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -555,7 +545,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/dao/FromMySql.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
-          <caret line="70" column="50" lean-forward="true" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
+          <caret line="70" column="50" selection-start-line="70" selection-start-column="50" selection-end-line="70" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -574,16 +564,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/videoPlayer.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="34" column="67" selection-start-line="34" selection-start-column="67" selection-end-line="34" selection-end-column="67" />
+        <state relative-caret-position="153">
+          <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/controller/VideoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1488">
-          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        <state relative-caret-position="246">
+          <caret line="167" column="70" selection-start-line="167" selection-start-column="44" selection-end-line="167" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/hackathon/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
