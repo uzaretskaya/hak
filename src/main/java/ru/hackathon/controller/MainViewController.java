@@ -32,23 +32,18 @@ public class MainViewController implements Initializable {
 
     @FXML
     private void methodChoise() {
-        Integer row = null;
-        try {
-            row = tableCameras.focusModelProperty().getValue().getFocusedCell().getRow();
-        } catch (Exception e){
-            e.printStackTrace();
+        if (camerasData.size() == 0) {
+            return;
         }
-        if (row != null){
+
+        try {
+            Integer row = tableCameras.focusModelProperty().getValue().getFocusedCell().getRow();
             String videoPath = camerasData.get(row).getPathVideo();
             Long id = camerasData.get(row).getId();
-            if (videoPath != ""){
-                VideoPlayer player = new VideoPlayer();
-                try {
-                    player.start(videoPath, id);
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
+            VideoPlayer player = new VideoPlayer();
+            player.start(videoPath, id);
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -61,6 +56,5 @@ public class MainViewController implements Initializable {
         cameraIDColumn.setCellValueFactory(new PropertyValueFactory<Camera, Long>("cameraId"));
         videoPathColumn.setCellValueFactory(new PropertyValueFactory<Camera, String>("pathVideo"));
         tableCameras.setItems(camerasData);
-
     }
 }

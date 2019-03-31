@@ -59,7 +59,7 @@ public class FromMySql implements CameraRepository {
     @Override
     public List<Event> getEvents(Long id_video) {
         SQLHandler sqlHandler = new SQLHandler();
-        String sql = "select * from timelines";
+        String sql = "select * from timelines where camera_times_id = " + id_video;
         List<Event> events = new ArrayList();
         try {
             sqlHandler.connect(dataBase);

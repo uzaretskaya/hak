@@ -29,6 +29,7 @@ public class VideoController implements Initializable {
 
     private String videoPath;
     private Long id_video;
+    private Integer current_row = 0;
 
     private ObservableList<Event> eventsData = FXCollections.observableArrayList();
 
@@ -64,11 +65,14 @@ public class VideoController implements Initializable {
 
     @FXML
     private void methodNext() {
-        if (mediaPlayer == null) return;
-        System.out.println(mediaPlayer.getStatus());
+        if (mediaPlayer == null || eventsData.size() <= current_row) {
+            return;
+        }
+        Long time_open = eventsData.get(current_row).getTime_open();
         double currentTime = mediaPlayer.getCurrentTime().toMillis();
-        Duration duration = new Duration(currentTime + 5000.0);
+        Duration duration = new Duration(currentTime + time_open * 1000.0);
         mediaPlayer.seek(duration);
+        current_row++;
     }
 
     @FXML
