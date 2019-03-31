@@ -10,8 +10,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import ru.hackathon.App;
+import ru.hackathon.VideoPlayer;
 import ru.hackathon.dao.FromMySql;
 import ru.hackathon.model.Camera;
 import java.net.URL;
@@ -45,9 +47,10 @@ public class MainViewController implements Initializable {
     @FXML
     private void methodPlay() {
         if (mediaPlayer == null) {
-            media = new Media("http://pkg.bakhuss.ru/hackaton_bd/video/2019/03/30/1/video1.mp4");
-            mediaPlayer = new MediaPlayer(media);
-            video.setMediaPlayer(mediaPlayer);
+            return;
+//            media = new Media("http://pkg.bakhuss.ru/hackaton_bd/video/2019/03/30/1/video1.mp4");
+//            mediaPlayer = new MediaPlayer(media);
+//            video.setMediaPlayer(mediaPlayer);
         }
         System.out.println(mediaPlayer.getStatus());
         mediaPlayer.play();
@@ -77,23 +80,44 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void getData() {
+    private void methodChoise() {
+        Integer row = null;
+        try {
+            row = tableCameras.focusModelProperty().getValue().getFocusedCell().getRow();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        if (row != null){
+            String videoPath = camerasData.get(row).getPathVideo();
+            if (videoPath != ""){
+                VideoPlayer player = new VideoPlayer();
+                try {
+                    player.start(new Stage(), videoPath);
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+//                media = new Media(videoPath);
+//                mediaPlayer = new MediaPlayer(media);
+//                video.setMediaPlayer(mediaPlayer);
+            }
+        }
 
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (mediaPlayer == null) {
-            media = new Media("http://pkg.bakhuss.ru/hackaton_bd/video/2019/03/30/1/video1.mp4");
-            mediaPlayer = new MediaPlayer(media);
-            video.setMediaPlayer(mediaPlayer);
-        }
+//        if (mediaPlayer == null) {
+//            media = new Media("http://pkg.bakhuss.ru/hackaton_bd/video/2019/03/30/1/video1.mp4");
+//            mediaPlayer = new MediaPlayer(media);
+//            video.setMediaPlayer(mediaPlayer);
+//        }
         FromMySql sqlBase = new FromMySql();
         List<Camera> cameras = sqlBase.getCameras();
         camerasData.addAll(cameras);
         cameraIDColumn.setCellValueFactory(new PropertyValueFactory<Camera, Long>("cameraId"));
         videoPathColumn.setCellValueFactory(new PropertyValueFactory<Camera, String>("pathVideo"));
         tableCameras.setItems(camerasData);
+
     }
 }

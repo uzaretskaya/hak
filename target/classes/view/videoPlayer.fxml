@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<?import javafx.scene.layout.HBox?>
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox AnchorPane.leftAnchor="0.0">
+        <MediaView fx:id="video" fitHeight="600.0" fitWidth="700.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="0.0"/>
+        <HBox>
+            <ButtonBar nodeOrientation="LEFT_TO_RIGHT">
+                <buttons>
+                    <Button fx:id="btPlay" onAction="#methodPlay" text="play"/>
+                    <Button fx:id="btPause" onAction="#methodPause" text="pause"/>
+                    <Button fx:id="btStop" onAction="#methodStop" text="stop"/>
+                    <Button fx:id="btNext" onAction="#methodNext" text="next"/>
+                </buttons>
+            </ButtonBar>
+        </HBox>
+    </VBox>
+</AnchorPane>
