@@ -30,8 +30,8 @@
         </ButtonBar>
         <TableView fx:id="tableCameras" AnchorPane.bottomAnchor="0.0" maxHeight="250">
             <columns>
-                <TableColumn prefWidth="350.0" text="Camera_id" fx:id="cameraID"/>
-                <TableColumn prefWidth="150.0" text="Video path" fx:id="videoPath"/>
+                <TableColumn prefWidth="350.0" text="Camera_id" fx:id="cameraIDColumn"/>
+                <TableColumn prefWidth="150.0" text="Video path" fx:id="videoPathColumn"/>
             </columns>
         </TableView>
     </VBox>
