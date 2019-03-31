@@ -68,14 +68,11 @@ public class VideoController implements Initializable {
             return;
         }
         if (currentRow <= 0){
-            Duration duration = new Duration(0.0);
-            mediaPlayer.seek(duration);
+            setDuration(0L);
             currentRow = -1;
         } else {
             Long time_open = eventsData.get(--currentRow).getTimeOpen();
-            double currentTime = mediaPlayer.getCurrentTime().toMillis();
-            Duration duration = new Duration(currentTime - time_open * 1000.0);
-            mediaPlayer.seek(duration);
+            setDuration(time_open);
         }
     }
 
@@ -85,8 +82,11 @@ public class VideoController implements Initializable {
             return;
         }
         Long timeOpen = eventsData.get(++currentRow).getTimeOpen();
-        double currentTime = mediaPlayer.getCurrentTime().toMillis();
-        Duration duration = new Duration(currentTime + timeOpen * 1000.0);
+        setDuration(timeOpen);
+    }
+
+    private void setDuration(Long v) {
+        Duration duration = new Duration(v * 1000.0);
         mediaPlayer.seek(duration);
     }
 
@@ -96,6 +96,17 @@ public class VideoController implements Initializable {
             return;
         }
         mediaPlayer.stop();
+        currentRow = -1;
+    }
+
+    @FXML
+    private void methodСhoice() {
+        if (mediaPlayer == null || eventsData.size() == 0) {
+            return;
+        }
+        Integer row = tableEvents.focusModelProperty().getValue().getFocusedCell().getRow();
+        Long timeOpen = eventsData.get(row).getTimeOpen();
+        setDuration(timeOpen);
     }
 
     @Override
@@ -113,5 +124,7 @@ public class VideoController implements Initializable {
         timeCloseColumn.setCellValueFactory(new PropertyValueFactory<Event, Long>("timeClose"));
         tableEvents.setItems(eventsData);
     }
+
+
 
 }
