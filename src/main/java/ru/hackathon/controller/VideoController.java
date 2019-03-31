@@ -62,6 +62,9 @@ public class VideoController implements Initializable {
     @FXML
     private Button btStop;
 
+    @FXML
+    private Button btChoise;
+
     public void setApp(VideoPlayer app) {
         this.videoPath = app.getVideoPath();
         this.idVideo = app.getIdVideo();
@@ -160,6 +163,9 @@ public class VideoController implements Initializable {
 
         Image imageStop = new Image(getClass().getResourceAsStream("/Stop.png"));
         btStop.graphicProperty().setValue(new ImageView(imageStop));
+
+        Image imageChoise = new Image(getClass().getResourceAsStream("/Choise.png"));
+        btChoise.graphicProperty().setValue(new ImageView(imageChoise));
     }
 
 

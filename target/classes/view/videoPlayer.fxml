@@ -21,7 +21,7 @@
                     <Button fx:id="btStop" onAction="#methodStop" text="" />
                     <Button fx:id="btPrevious" onAction="#methodPrevious" text="" />
                     <Button fx:id="btNext" onAction="#methodNext" text="" />
-                    <Button fx:id="btChoise" onAction="#methodСhoice" text="choice" />
+                    <Button fx:id="btChoise" onAction="#methodСhoice" text="" />
                 </buttons>
             </ButtonBar>
          <padding>
