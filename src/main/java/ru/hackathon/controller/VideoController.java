@@ -72,11 +72,12 @@ public class VideoController implements Initializable {
         if (mediaPlayer == null) {
             media = new Media(videoPath);
             mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setAutoPlay(true);
             video.setMediaPlayer(mediaPlayer);
         }
         FromMySql sqlBase = new FromMySql();
         List<Camera> cameras = sqlBase.getCameras();
         camerasData.addAll(cameras);
-
     }
+
 }

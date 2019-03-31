@@ -17,7 +17,7 @@ public class VideoPlayer  {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/view/videoPlayer.fxml"));
         loader.setController(controller);
-        Scene scene = new Scene(loader.load(), 500, 500);
+        Scene scene = new Scene(loader.load(), 700, 442);
         primaryStage.setTitle("VideoPlayer");
         primaryStage.setScene(scene);
         primaryStage.show();
