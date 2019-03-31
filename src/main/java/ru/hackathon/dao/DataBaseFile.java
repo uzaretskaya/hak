@@ -12,9 +12,6 @@ public class DataBaseFile implements DataBase{
         this.password = password;
     }
 
-
-
-
     @Override
     public String getUrlDB() {
         return urlDB;
@@ -29,6 +26,5 @@ public class DataBaseFile implements DataBase{
     public String getPassword() {
         return password;
     }
-
 
 }

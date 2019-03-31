@@ -48,7 +48,7 @@ public class MainViewController implements Initializable {
             if (videoPath != ""){
                 VideoPlayer player = new VideoPlayer();
                 try {
-                    player.start(new Stage(), videoPath);
+                    player.start(videoPath);
                 } catch (Exception e){
                     e.printStackTrace();
                 }

@@ -1,17 +1,17 @@
 package ru.hackathon;
 
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ru.hackathon.controller.VideoController;
 
-public class VideoPlayer extends Application {
+public class VideoPlayer  {
 
     private String videoPath;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(String videoPath) throws Exception {
+        this.videoPath = videoPath;
+        Stage primaryStage = new Stage();
         VideoController controller = new VideoController();
         controller.setApp(this);
         FXMLLoader loader = new FXMLLoader();
@@ -21,11 +21,6 @@ public class VideoPlayer extends Application {
         primaryStage.setTitle("VideoPlayer");
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    public void start(Stage primaryStage, String videoPath) throws Exception {
-        this.videoPath = videoPath;
-        start(primaryStage);
     }
 
     public String getVideoPath() {
